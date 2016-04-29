@@ -1,0 +1,50 @@
+{
+  "name": "css-parser-combinator",
+  "version": "0.0.1",
+  "description": "A CSS parser and its combinators",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "npm run compile",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "watch": "./node_modules/.bin/mocha --compilers js:babel-core/register --watch",
+    "compile": "./node_modules/.bin/babel src/ -d dist/",
+    "docs": "./node_modules/.bin/docco src/*.js",
+    "clean": "rm -rf dist/**"
+  },
+  "babel": {
+    "plugins": [
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Risto-Stevcev/css-parser-combinator.git"
+  },
+  "keywords": [
+    "css",
+    "parser",
+    "combinator"
+  ],
+  "author": "Risto Stevcev",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "6.7.x",
+    "do-notation": "1.0.x",
+    "eulalie": "2.5.x",
+    "parsimmon": "0.7.x",
+    "ramda": "0.21.x"
+  },
+  "devDependencies": {
+    "babel-cli": "6.6.x",
+    "babel-core": "6.7.x",
+    "babel-plugin-transform-object-rest-spread": "6.6.x",
+    "babel-preset-es2015": "6.6.x",
+    "chai": "3.5.x",
+    "docco": "0.7.x",
+    "mocha": "2.4.x",
+    "source-map-support": "0.4.x"
+  }
+}
